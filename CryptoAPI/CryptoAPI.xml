@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CryptoAPI</name>
+    </assembly>
+    <members>
+        <member name="M:CryptoAPI.Controllers.DevController.Test1SignGET">
+            <summary>
+            метод для разработчиков 
+            </summary>
+        </member>
+        <member name="M:CryptoAPI.Controllers.DevController.XadesSignFile(Microsoft.AspNetCore.Http.IFormFile,CryptoDto.Enums.APIXadesFormat,CryptoDto.Enums.APIXadesType)">
+            <summary>
+            метод для разработчиков 
+            </summary>
+        </member>
+        <member name="M:CryptoAPI.Controllers.DevController.CadesSignFile(Microsoft.AspNetCore.Http.IFormFile,CryptoDto.Enums.APICadesFormat,System.Boolean)">
+            <summary>
+            метод для разработчиков 
+            </summary>
+        </member>
+        <member name="M:CryptoAPI.Controllers.V1.SignatureController.SignCades(CryptoDto.RequestDTO.Sign.SignCadesDTO)">
+            <summary>
+            Запрос на получение подписанного сообщения формата CADES
+            </summary>     
+        </member>
+        <member name="M:CryptoAPI.Controllers.V1.SignatureController.SignXades(CryptoDto.RequestDTO.Sign.SignXadesDTO)">
+            <summary>
+            Запрос на получение подписанного сообщения формата XADES
+            </summary>
+        </member>
+        <member name="M:CryptoAPI.Controllers.V1.SignatureController.CadesVerify(CryptoDto.RequestDTO.Sign.CadesVerifyDTO)">
+            <summary>
+            Запрос на проверку подписанного сообщения формата CADES
+            </summary>
+            <param name="cadesVerifyDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CryptoAPI.Controllers.V1.SignatureController.XadesVerify(CryptoDto.RequestDTO.Sign.XadesVerifyDTO)">
+            <summary>
+            Запрос на проверку подписанного сообщения формата XADES 
+            </summary>
+            <param name="xadesVerifyDTO">Подписанный документ или значение подписи для проверки (в кодировке Base64)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CryptoAPI.Controllers.V2.SignatureController.SignCades(System.String,System.String,System.String,CryptoDto.Enums.APICadesFormat,System.Boolean)">
+            <remarks>
+            Content даннные для подписи
+            NameSign название подписи по которой мы будем искать сертификат // переименовать 
+            ID системы 
+            PinHashCode пинкод закрытого ключа
+            signatureFormat формат
+            IsDetached флаг отсоедененой подписи
+            
+              Пример ответа:
+              
+              {
+              
+              }
+            
+            </remarks>
+            Content даннные для подписи
+            NameSign название подписи по которой мы будем искать сертификат // переименовать 
+            ID системы 
+            PinHashCode пинкод закрытого ключа
+            signatureFormat формат
+            IsDetached флаг отсоедененой подписи
+        </member>
+        <member name="M:CryptoAPI.Controllers.V2.SignatureController.CadesVerify(System.String,CryptoDto.Enums.APICadesFormat,System.Boolean,System.String)">
+            <summary>
+            метод проверки подписи 
+            </summary>
+            <param name="content">Подписанный документ или значение подписи для проверки (в кодировке Base64)</param>
+            <param name="SignatureFormat"> Формат подписи.</param>
+            <param name="isDetached">открепленная прикрепленная</param>
+            <param name="source">Исходный документ. Используется только для проверки отсоединенной подписи (в кодировке Base64)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CryptoAPI.Controllers.V2.SignatureController.XadesVerify(System.String,CryptoDto.Enums.APIXadesFormat,System.Boolean,System.String,CryptoDto.Enums.APIXadesType)">
+            <summary>
+            метод проверки подписи 
+            </summary>
+            <param name="content">Подписанный документ или значение подписи для проверки (в кодировке Base64)</param>
+            <param name="signatureFormat"> Формат подписи.</param>
+            <param name="xadesType">Тип подписи</param>
+            <param name="isDetached">открепленная прикрепленная</param>
+            <param name="source">Исходный документ. Используется только для проверки отсоединенной подписи (в кодировке Base64)</param>
+            <returns></returns>
+        </member>
+        <member name="P:CryptoAPI.AuthorizeException.ErrorCode">
+            <summary>
+            Код ошибки (200+)
+            </summary>
+        </member>
+        <member name="P:CryptoAPI.CryptoAPIException.ErrorCode">
+            <summary>
+            Код ошибки (100+)
+            </summary>
+        </member>
+        <member name="T:CryptoAPI.Extensions.ConfigureApiVersioning">
+            <summary>
+            Configure the API versioning properties of the project.
+            </summary>
+        </member>
+        <member name="M:CryptoAPI.Extensions.ConfigureApiVersioning.AddApiVersioningConfigured(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure the API versioning properties of the project, such as return headers, version format, etc.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:CryptoAPI.Extensions.ConfigureSwaggerSwashbuckle">
+            <summary>
+            Configure the Swagger generator.
+            </summary>
+        </member>
+        <member name="M:CryptoAPI.Extensions.ConfigureSwaggerSwashbuckle.AddSwaggerSwashbuckleConfigured(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            Configure the Swagger generator with XML comments, bearer authentication
+        </member>
+        <member name="T:CryptoAPI.Extensions.ConfigureSwaggerSwashbuckleOptions">
+            <summary>
+            Configures the Swagger generation options.
+            </summary>
+            <remarks>This allows API versioning to define a Swagger document per API version after the
+            <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider"/> service has been resolved from the service container.</remarks>
+        </member>
+        <member name="M:CryptoAPI.Extensions.ConfigureSwaggerSwashbuckleOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CryptoAPI.Extensions.ConfigureSwaggerSwashbuckleOptions"/> class.
+            </summary>
+            <param name="provider">The <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider">provider</see> used to generate Swagger documents.</param>
+        </member>
+        <member name="M:CryptoAPI.Extensions.ConfigureSwaggerSwashbuckleOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:CryptoAPI.SettingsHealhCheck.EndpointsHealhCheck(Microsoft.AspNetCore.Builder.WebApplication)">
+            регистрациия ендпойнтов хелфчека 
+        </member>
+        <member name="T:CryptoAPI.Middlewares.ExceptionHandlerMiddleware">
+            <summary>
+            Слой мидел варе для обработки ошибок 
+            </summary>
+        </member>
+        <member name="M:CryptoAPI.Services.CryptoService.GetContainer(CryptoDto.RequestDTO.CryptoContainerRequestDto,System.Boolean,System.String)">
+            <summary>
+            Получение информации о контейнере по параметрам сертификата
+            </summary>
+            <param name="signCadesDTO"></param>
+            <param name="pinHashCode"></param>
+            <param name="checkPinHashCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CryptoAPI.Services.EncryptionService">
+            <summary>
+            Сервис шифрации дешифрапции 
+            </summary>
+        </member>
+        <member name="M:CryptoAPI.Services.EncryptionService.#ctor(CryptoAPI.Services.IEncryptionMessageService)">
+            <summary>
+            .ctor
+            </summary>
+            <param name="encryptionMessageService"></param>
+            <param name="vaultIntegrationDataService"></param>
+            <param name="logRecordService"></param>
+            <param name="cryptoServiceLogRecordService"></param>
+            <param name="requestInfo"></param>
+        </member>
+        <member name="M:CryptoAPI.Services.EncryptionService.Encrypt(CryptoDto.RequestDTO.Encrypt.EncryptRequetDTO)">
+            <summary>
+            метод шифрования
+            </summary>
+            <param name="encryptRequetDTO"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:CryptoAPI.Services.ISignatureService.SignCades(CryptoDto.RequestDTO.Sign.SignCadesDTO)">
+            <summary>
+            Получение подписи CADES
+            </summary>
+            <param name="signCadesDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CryptoAPI.Services.ISignatureService.SignXades(CryptoDto.RequestDTO.Sign.SignXadesDTO)">
+            <summary>
+            Получение подписи XADES
+            </summary>
+            <param name="signXadesDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CryptoAPI.Services.ISignatureService.ValidateCadesSignature(System.Byte[],CryptoDto.Enums.APICadesFormat,System.Byte[])">
+            <summary>
+            Проверка подписи CADES
+            </summary>
+            <param name="signMessage">подписанный документ (обязательный)</param>
+            <param name="signatureFormat"></param>
+            <param name="sourceMessage">оригинальный документ</param>
+            <returns></returns>
+        </member>
+        <member name="M:CryptoAPI.Services.ISignatureService.ValidateXadesSignature(System.Byte[],CryptoDto.Enums.APIXadesFormat,System.Byte[],CryptoDto.Enums.APIXadesType)">
+            <summary>
+            Проверка подписи CADES
+            </summary>
+            <param name="signMessage">подписанный документ (обязательный)</param>
+            <param name="signatureFormat"></param>
+            <param name="sourceMessage">оригинальный документ</param>
+            <param name="xadesType"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
